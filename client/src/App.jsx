@@ -6,6 +6,7 @@ import Ground from "./components/ground";
 import Player from "./components/Player";
 import FirstPersonView from "./components/FirstPersonView";
 import "./App.css";
+import Cubes from "./components/Cubes.jsx";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
         <FirstPersonView />
         <Physics>
           <Player />
+          <Cubes />
           <Ground />
         </Physics>
       </Canvas>
