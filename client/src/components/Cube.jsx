@@ -18,9 +18,12 @@ const Cube = ({ position, texture }) => {
     <mesh
       onClick={(e) => {
         e.stopPropagation();
-        const faceIndex = Math.floor(e.faceIndex / 2);
+        const faceIndex = Math.floor(e.faceIndex / 2); // if we want to add block by clicking on the block
         const { x, y, z } = reference.current.position;
-        if (faceIndex === 0) {
+        if (e.altKey) {
+          removeCube(x, y, z);
+          return;
+        } else if (faceIndex === 0) {
           addCube(x + 1, y, z);
           return;
         } else if (faceIndex === 1) {
